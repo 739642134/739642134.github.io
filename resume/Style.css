@@ -44,11 +44,14 @@
 }
 
 .base {
+	width:100%;
 	height: 760px;
 	border-bottom: 2px soild #FF0000;
 }
 #bas {
-   background:#33FFFF;
+   	background-image: url(img/b_01.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
 }
 #inf{
 	height: 530px;width:800px;
