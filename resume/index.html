@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>刘若楠求职简历</title>
+		<link href="Style.css" rel="stylesheet" type="text/css" />
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(window).scroll(function() {
+					var top = $(document).scrollTop();
+					var menu=$("#menu");
+					var items=$("#resume").find(".base");
+					var currentId = ""; //滚动条现在所在位置的item id
+					items.each(function(){
+						var m=$(this);
+						 //注意：m.offset().top代表每一个item的顶部位置
+                    if (top > m.offset().top - 300) {
+                        currentId = "#" + m.attr("id");
+                    } else {
+                        return false;
+                    }
+                });
+
+                var currentLink = menu.find(".a");
+                if (currentId && currentLink.attr("href") != currentId) {
+                    currentLink.removeClass("a");
+                    menu.find("[href=" + currentId + "]").addClass("a");
+                }
+            });
+        });
+
+
+		</script>
+	</head>
+	<header>
+		<div id="menu">
+			<img src="img/logo.jpg" />
+			<ul>
+
+				<li>
+					<a class="a"  href="#bas"><!--锚点链接-->
+					<br />
+					基本信息
+					<br />
+					<p>
+						Basic Information
+					</p></a>
+				</li>
+				<li>
+					<a  href="#edu">
+					<br />
+					教育背景
+					<br />
+					<p>
+						Education Background
+					</p></a>
+				</li>
+				<li>
+					<a  href="#pro">
+					<br />
+					项目经验
+					<br />
+					<p>
+						Project Experiences
+					</p></a>
+				</li>
+				<li>
+					<a  href="#exp">
+					<br />
+					工作经历
+					<br />
+					<p>
+						Work Experiences
+					</p></a>
+				</li>
+				<li>
+					<a  href="#self">
+					<br />
+					自我评价
+					<br />
+					<p>
+						Self Assessment
+					</p></a>
+				</li>
+
+			</ul>
+		</div>
+	</header>
+	<body>
+
+		<div id="resume">
+			<div id="blank"></div>
+			<div id="bas" class="base">
+				<div id="blank"></div>
+				<div id="inf">
+					<li>
+						姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<span>刘若楠</span>
+					</li>
+					<li>
+						性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<span>女</span>
+					</li>
+					<li>
+						学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：<span>硕士</span>
+					</li>
+					<li>
+						出生日期：<span>1990.04.05</span>
+					</li>
+					<li>
+						籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯：<span>辽宁省鞍山市</span>
+					</li>
+					<li>
+						联系电话：<span>15942007349</span>
+					</li>
+					<li>
+						电子邮箱：<span>lrn_sy@126.com</span>
+					</li>
+					<li>
+						毕业时间：<span>2017年3月</span>
+					</li>
+					<li>
+						婚姻状况：<span>未婚</span>
+					</li>
+					<li>
+						求职意向：<span>互联网技术开发</span>
+					</li>
+					<li>
+						工作地点：<span>北京</span>
+					</li>
+					<li>
+						期望职位：<span>前端开发、测试、Java开发</span>
+					</li>
+				</div>
+				<img src="img/pho.jpg"/>
+				<img />
+			</div>
+			<div id="edu" class="base">
+				<div id="blank"></div>
+				<div id="inf1">
+					<ul id="neu">
+						硕士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2014.9-2017.3
+						<li>
+							学&nbsp;&nbsp;&nbsp;&nbsp;校：<span>东北大学 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;985/211重点工程院校</span>
+						</li>
+						<li>
+							专&nbsp;&nbsp;&nbsp;&nbsp;业：<span>生物医学工程专业（机器学习、医学图像模式识别方向）</span>
+						</li>
+						<li>
+							学&nbsp;&nbsp;&nbsp;&nbsp;院：<span>中荷生物医学与信息工程学院</span>
+						</li>
+						<li>
+							实&nbsp;验&nbsp;室：<span>东北大学软件学院多媒体医疗信息研究室</span>
+						</li>
+
+						<li>
+							科研成果：<span>基于张量子空间的半脑对称度特征与癫痫识别&nbsp;&nbsp;&nbsp;&nbsp;东北大学学报（EI收录）</span>
+						</li>
+						<li>
+							毕业论文：<span>基于CT/PET图像的癫痫自动检测</span>
+						</li>
+						<li>
+							<a href="img/score.png" target="_blank">硕士成绩单</a>
+						</li>
+					</ul>
+					<ul id="lg">
+						学士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2009.9-2013.7
+						<li>
+							学&nbsp;&nbsp;&nbsp;&nbsp;校：<span>沈阳理工大学 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							专&nbsp;&nbsp;&nbsp;&nbsp;业：<span>通信工程</span>
+						</li>
+						<li>
+							学&nbsp;&nbsp;&nbsp;&nbsp;院：<span>信息科学与工程学院</span>
+						</li>
+						<li>
+							毕业论文：<span>图像平滑处理理论与实践的研究</span>
+						</li>
+						<li>
+							英语水平： <a href="img/six.png" target="_blank">CET-6</a>
+						</li>
+						<li>
+							计算机水平： <a href="img/two.png" target="_blank">国家计算机二级C</a>
+						</li>
+						<li>
+							<a href="img/b_02.jpg" target="_blank">本科成绩单</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<div id="pro" class="base">
+				<div id="blank"></div>
+				<div id="inf2">
+					<ul id="XFun">
+						Xfun吃货俱乐部旅游网站
+						<li>
+							需求分析:<span>本网站结合<a href="#">爱奇艺</a>上独播的美食旅游节目XFun吃货俱乐部，为各位吃货朋友提供最全面的旅行路线、风味美食、优质餐厅等。功能包括：用户注册、登录、商城浏览、购物车等</span>
+						</li>
+
+						<li>
+							使用技术：<span>前端：HTML/CSS/Javascript/jQuery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后台：Java/JSP/Servlet/JDBC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据库：MySQL</span>
+						</li>
+						<li>
+							开发工具：<span>MyEclipse/Apatana/Tomcat/Firefox以及各种各样的插件</span>
+						</li>
+						<li>
+							项目展示： <a href="img/x.png" target="_blank">XFun</a>&nbsp;&nbsp;&nbsp;<span>此为当前项目首页展示</span><p style="color:black;font-weight: 600">注意：XFun商标、节目信息等为公共途径获得服务于刘若楠本人找工作使用，无任何商业获利</p>
+						</li>
+					</ul>
+					<ul id="CT">
+						CT/PET图像的肺结节识别（国家自然基金项目）2015.04-2015.10
+						<li>
+							理论背景：<span>机器学习、支持张量机、小波变换</span>
+						</li>
+						<li>
+							开发工具：<span>MATLAB/一系列图像处理的软件</span>
+						</li>
+
+					</ul>
+					<ul id="PET">
+						PET图像的癫痫自动检测（国家自然基金项目）2015.12-2016.06
+						<li>
+							理论背景：<span>张量模型、MPCA、SVM、KNN、SPM</span>
+						</li>
+						<li>
+							开发工具：<span>MATLAB/一系列图像处理的软件</span>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div id="exp" class="base">
+				<div id="inf1">
+					<ul >
+						2013.8-2014.8&nbsp;&nbsp;&nbsp;鞍山钢铁集团自动化公司
+						<li>
+							部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门：<span>运维事业部</span>
+						</li>
+						<li>
+							职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：<span>技术员</span>
+						</li>
+						<li>
+							主要职能：<span>鞍钢固定资产软件的维护</span>
+						</li>
+						<li>
+							我的收获：<span>"再大的事也不能算大，再小的事也不能算小"</span>
+						</li>
+					</ul>
+					<ul >
+						2014.09-2015.8&nbsp;&nbsp;东北大学中荷学院教学科研办学生助理
+						<li>
+							主要职能：<span>协助教学科研办老师处理日常行政工作</span>
+						</li>
+						<li>
+							我的收获：<span>"再简单的事也要干的漂漂亮亮"</span>
+						</li>
+
+					</ul>
+					<ul >
+						2015.9-今&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;美国stork公司
+						<a href="http://www.storkapp.me/accountCenter/login_form.php?firsttime=1" target="_blank"><img src="img/bird.JPG" height="60" width="70;"/></a>
+						<li>
+							主要职能：<span>对Stork公司的数据整理以及产品的推广</span>
+						</li>
+						<li>
+							我的收获：<span>"诚实、责任"</span>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div id="self" class="base">
+				<div id="inf1">
+					<ul >
+						担任职务
+						<li>
+							东北大学中荷学院研究生体育部部长
+						</li>
+						<li>
+							主要事迹：<span> 在寝室的活动室里带领同学们锻炼。 </span>
+							<p>
+								<span> &nbsp;&nbsp;&nbsp;&nbsp;在研究生会举办的“第六届东北大学研究生体育节中”她带领中荷学院2014级全体研究生获得浑南赛区团体第二名的好成绩。在各项比赛的训练期间，
+									所有团体项目的训练无论是人员、时间的安排还是组织、训练的过程她都亲力亲为、参与其中。比赛时更是早早到场，为比赛的顺利进行做准备。</span>
+							</p>
+						</li>
+					</ul>
+					<ul >
+						获奖情况
+						<li>
+							东北大学2015年度“优秀研究生干部”个人荣誉称号
+						</li>
+						<li>
+							2015年度“东北大学二等学业奖学金”
+						</li>
+
+					</ul>
+					<ul >
+						自我评价
+
+						<li>
+							90白羊座女汉子一枚，乐观开朗，积极向上，喜欢体育活动，感染力强，喜欢挑战，动手能力极强，善于实践，思想独立，善于思考，非常想投身互联网行业；
+
+						</li>
+					</ul>
+				</div>
+				<img src="img/011.jpg" height="300" width="200;"/>
+			</div>
+
+		</div>
+	</body>
+</html>

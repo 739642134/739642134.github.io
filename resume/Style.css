@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#menu {
+	width:100%;
+	height: 100px;
+	position: fixed;
+	overflow: hidden;
+	background-color: #F5FFFA;
+	opacity: 1;
+}
+
+#menu ul li {
+	display: block;
+	width: 200px;
+	list-style: none;
+	height: 100px;
+	float: left;
+	background-color: #F5FFFA;
+}
+#menu ul li a {
+	height: 100px;
+	width: 200px;
+	background-color: #F5FFFA;
+	display: block;
+	font-size: 25px;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+#menu ul li a p {
+	font-size: 18px;
+}
+#menu img{height: 100px;width: 254px;float: left;}
+#menu ul li a:hover,#menu ul li a.a {
+	background-color: #3A0088;
+	color: #ffffff;
+}
+#blank {
+	display:block;
+	height: 100px;
+}
+
+.base {
+	height: 760px;
+	border-bottom: 2px soild #FF0000;
+}
+#bas {
+	background-image: url(img/b_01.jpg);
+}
+#inf{
+	height: 530px;width:800px;
+	float: left;
+	display:block;
+	margin-left: 100px;
+	overflow: hidden;
+	
+	
+}
+#bas img{margin: 20px;}
+#bas li{
+	text-decoration: none;
+	text-align:left;
+	list-style: none;
+	display: block;
+	width: 395px;
+	float: left;
+	font-size: 25px;
+	font-weight: 900;
+	margin-left: 5px;
+	line-height: 80px;
+}
+#bas  li span{font-size: 20px;font-weight:400}
+
+#edu {
+	background-image: url(img/b_02.jpg);
+}
+#inf1{
+	height: 580px;width:690px;
+	float: left;
+	display:block;
+	margin-left: 250px;
+	overflow: hidden;	
+}
+#inf1 ul{
+	height:auto;
+	margin: 20px;
+	font-size: 25px;
+	font-weight: 900;
+	overflow: hidden;
+}
+#inf1 ul li{
+	text-decoration: none;
+	text-align:left;
+	list-style: none;
+	display: block;
+	font-size: 18px;
+	font-weight: 700;
+	margin-left: 15px;
+	line-height: 30px;
+}
+#inf1 ul li span{font-size: 18px;font-weight:400}
+#exp {
+	background-image: url(img/b_03.jpg);
+}
+#inf2{
+	height: 580px;width:900px;
+	float: left;
+	display:block;
+	margin-left: 250px;
+	overflow: hidden;	
+}
+#inf2 ul{
+	color:#EEFFBB;
+	height:auto;
+	margin: 20px;
+	font-size: 25px;
+	font-weight: 900;
+	overflow: hidden;
+}
+#inf2 ul li{
+	color:#EEFFBB;
+	text-decoration: none;
+	text-align:left;
+	list-style: none;
+	display: block;
+	font-size: 18px;
+	font-weight: 700;
+	margin-left: 15px;
+	line-height: 30px;
+}
+#inf2 ul li span{font-size: 18px;font-weight:400}
+#pro {
+	background-image: url(img/b_04.jpg);
+}
+#exp div{margin:100px 300px;}
+#self {
+	background-image: url(img/b_05.jpg);
+}
+#self div{margin-top:115px;margin-left:200 ;width: 750px;}
+#self img{
+	margin-top: 210px;
+}
