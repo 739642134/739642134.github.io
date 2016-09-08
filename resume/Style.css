@@ -49,6 +49,8 @@
 }
 #bas {
 	background-image: url(img/b_01.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
 }
 #inf{
 	height: 530px;width:800px;
@@ -76,6 +78,8 @@
 
 #edu {
 	background-image: url(img/b_02.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
 }
 #inf1{
 	height: 580px;width:690px;
@@ -104,6 +108,8 @@
 #inf1 ul li span{font-size: 18px;font-weight:400}
 #exp {
 	background-image: url(img/b_03.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
 }
 #inf2{
 	height: 580px;width:900px;
@@ -134,10 +140,14 @@
 #inf2 ul li span{font-size: 18px;font-weight:400}
 #pro {
 	background-image: url(img/b_04.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
 }
 #exp div{margin:100px 300px;}
 #self {
 	background-image: url(img/b_05.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
 }
 #self div{margin-top:115px;margin-left:200 ;width: 750px;}
 #self img{
