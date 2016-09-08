@@ -5,34 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>刘若楠求职简历</title>
 		<link href="Style.css" rel="stylesheet" type="text/css" />
-		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				$(window).scroll(function() {
-					var top = $(document).scrollTop();
-					var menu=$("#menu");
-					var items=$("#resume").find(".base");
-					var currentId = ""; //滚动条现在所在位置的item id
-					items.each(function(){
-						var m=$(this);
-						 //注意：m.offset().top代表每一个item的顶部位置
-                    if (top > m.offset().top - 300) {
-                        currentId = "#" + m.attr("id");
-                    } else {
-                        return false;
-                    }
-                });
-
-                var currentLink = menu.find(".a");
-                if (currentId && currentLink.attr("href") != currentId) {
-                    currentLink.removeClass("a");
-                    menu.find("[href=" + currentId + "]").addClass("a");
-                }
-            });
-        });
-
-
-		</script>
+		
 	</head>
 	<header>
 		<div id="menu">
@@ -309,5 +282,33 @@
 			</div>
 
 		</div>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(window).scroll(function() {
+					var top = $(document).scrollTop();
+					var menu=$("#menu");
+					var items=$("#resume").find(".base");
+					var currentId = ""; //滚动条现在所在位置的item id
+					items.each(function(){
+						var m=$(this);
+						 //注意：m.offset().top代表每一个item的顶部位置
+                    if (top > m.offset().top - 300) {
+                        currentId = "#" + m.attr("id");
+                    } else {
+                        return false;
+                    }
+                });
+
+                var currentLink = menu.find(".a");
+                if (currentId && currentLink.attr("href") != currentId) {
+                    currentLink.removeClass("a");
+                    menu.find("[href=" + currentId + "]").addClass("a");
+                }
+            });
+        });
+
+
+		</script>
 	</body>
 </html>
