@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>signUp</title>
+		<script language="JavaScript" type="text/javascript" src="js/sign.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.top1 {
+				background: url(images/logo2.jpg);
+				height: 620px;
+			}
+			.top2 {
+				padding-top: 80px;
+				padding-left: 600px;
+				height: auto;
+				width: 500px;
+			}
+			.top2 li {
+				list-style: none;
+				line-height: 40px;
+				color: #000000;
+				font-weight: 400;
+				
+			}
+			em {
+				display: block;
+				text-align: center;
+				border: 1px solid white;
+				width: 70px;
+				float: left;
+				line-height: 20px;
+				background-color: #CCFFFF;
+			}
+			.active{
+				background-color:#66CC33;
+			}
+			p{
+				display: none;
+				width: 200px;
+				font-size:10pt;
+				color: red;
+				float: right;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top1">
+			<div class="top2">
+				<form style="color: white; font-size:large;width: 445px">
+					<h1 style="font-size: larger;font-weight: 900">
+						欢迎加入XFun吃货俱乐部
+					</h1>
+					<li>
+						<span style="color: red">*</span>用&nbsp;户&nbsp;名&nbsp;
+						<input type="text" /><p><span style="color: black"> 数字、字母、汉字、下划线5-25字符，推荐使用中文会员名</span></p>
+					</li>
+					<b id="count" style="line-height: 0px;font-size: 10pt;color:black;padding-left:87px;visibility:hidden;font-weight: 200 ">0个字符</b>
+					<li>
+						<span style="color: red">*</span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;
+						<input type="password" /><p><span style="color: black">请使用字母加数字的组合密码，不能单独使用密码或数字，长度应为6到16个字符</span></p><br />
+						<em class="active">弱</em><em>中</em><em>强</em>
+					</li>
+					<br />
+					<li>
+						<span style="color: red">*</span>重输密码
+						<input type="password" disabled="" /><p style="padding-top: 10px;">请再输一次</p>
+					</li>
+					<li>
+						<span style="color: red">*</span>真实姓名
+						<input type="text" /><p style="padding-top: 10px;"></p>
+					</li>
+					<li style="padding-right: 70px">
+						<span style="color: red">*</span>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="01" type="radio" checked="checked"/>
+						<span style="font-weight: 500;color: black;width: 30px;">男</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="01" type="radio"  />
+						<span style="font-weight: 500;color: black">女</span><p></p>
+					</li>
+					<li>
+						<span style="color: red">*</span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业&nbsp;
+						<input type="text" /><p style="padding-top: 10px;"></p>
+					</li>
+					<li>
+						<span style="color: red">*</span>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄&nbsp;
+						<input type="text" /><p style="padding-top: 10px;"></p>
+					</li>
+					<li>
+						通信地址
+						<input type="text" /><p></p>
+					</li>
+					<li>
+						<span style="color: red">*</span>电话号码
+						<input type="text" /><p style="padding-top: 10px;"></p>
+					</li>
+					<li>
+						<span style="color: red">*</span>电子邮箱
+						<input type="text" /><p style="padding-top: 10px;"></p>
+					</li>
+					<li style="padding-right: 100px">
+						<a href="http://127.0.0.1:8020/Xfun/success.html">
+						<input type="button" value="注册" style="font-size: large;text-decoration: none"/>
+						</a>
+					</li>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

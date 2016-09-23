@@ -1,73 +1,745 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/reset.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/test.css" />
-    <script src="js/avalon.min.js"></script>
-    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script>
-        function print1()
-        {  alert("如何才算赢：使拼板全部变成月饼.");}
-    </script>
-</head>
-<body ms-controller="model">
-    <h1>翻转拼图游戏</h1>
-    <button onclick="print1()">玩法说明</button>
-    棋盘大小：{{sz}} x {{sz}}
-    <div id="board">
-        <div class="tile" ms-class="on:el==1" ms-class-1="clear:$index%sz==0"
-             ms-repeat="grid" ms-click="tile_click"></div>
-    </div>
-    <script>
-        var vm = avalon.define('model', function(vm) {
-            vm.sz = 0;//设置大小
-            vm.grid = [];//设定数组
-            vm.tile_click = function() {//设置点击函数
-                var col = $(this).index() % vm.sz;//知道第几列
-                var row = parseInt($(this).index() / vm.sz);//获取行
-                var dx = [0, 0, 1, 0, -1];//用于找上下左右格子
-                var dy = [0, 1, 0, -1, 0];//用于找上下左右格子
-                var buf;
-                var k=0;
-                for(var d = 0; d < 5; ++d) {
-                    col += dx[d]; row += dy[d];//五个位置都找一遍
-                    if(col >=0 && col < vm.sz && row >=0 && row < vm.sz) {
-                        //设置边界
-                        buf = 1 - vm.grid[row*vm.sz+col];
-                       // buf暂时存储数值
-                        vm.grid.splice(row*vm.sz+col, 1, buf);
-                        //替换进入
-                    }
-                    col -= dx[d]; row -= dy[d];//再回归到中间位置
-                }
-                for(var j=0; j < vm.sz*vm.sz;j++)
-                {
-                    if(vm.grid[j]==1)k++;
-                    if(k==(vm.sz*vm.sz))
-                    {alert("恭喜胜利，祝您中秋愉快"); vm.sz++;}
-                }
-            }
-        });
-        vm.$watch('sz', function(val) {
-            var i, j, row;
-            val = parseInt(val) || 4;
-            vm.grid.clear();
-            for(i = 0; i < val * val; ++i) vm.grid.push(0);
-        });
-        vm.sz = 3;
-        function up(){
-            vm.sz++;
-            if(vm.sz>15){alert("别乱点");vm.sz=14;}
-        }
-        function down(){
-            vm.sz--;
-            if(vm.sz==1){alert("不能再降了");vm.sz=2;}
-        }
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>节目</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript" type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
 
-    </script>
-    <button onclick="up()">提高难度</button>
-    <button onclick="down()">降低难度</button>
-</body>
+		<div id="container" class="top">
+
+			<div id="header">
+				<ul class="nav">
+					<li>
+						<a class="on" href="#">首　　页</a>
+					</li>
+					<li>
+						<a href="http://127.0.0.1:8020/Xfun/goods.html" target="_blank">商         城</a>
+					</li>
+					<li>
+						<a href="#">自由行Tips</a>
+					</li>
+					<li>
+						<a href="http://www.lvmama.com/trip/show/50759" target="_blank">网友晒游</a>
+					</li>
+					<li>
+						<a href="#">加入我们</a>
+					</li>
+					<dt class="welcome">
+						<a href="http://127.0.0.1:8020/Xfun/signUp.html" class="signup">注册</a>
+						<a href="http://127.0.0.1:8020/Xfun/signin.html" class="signin">登录</a>
+					</dt>
+				</ul>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="topmenu" id="topmenu">
+				<div class="toptitle">
+					我们去过的国家
+				</div>
+				<li >
+					亚 &nbsp;&nbsp;&nbsp;&nbsp;洲<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">马来西亚</a>
+								</dt>
+								<dd>
+									<a href="http://127.0.0.1:8020/Xfun/vedio.html">吉隆坡</a><a href="#">怡保</a><a href="#">马六甲</a><a href="#">槟城</a>
+									<a href="#">沙巴</a><a href="#">新山</a><a href="#">吉打</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">泰国</a>
+								</dt>
+								<dd>
+									<a href="#">曼谷</a><a href="#">普吉岛</a><a href="#">芭提雅</a><a href="#">清迈</a>
+									<a href="#">清莱</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">新加坡</a>
+								</dt>
+								<dd>
+									<a href="#">新加坡市</a><a href="#">后港</a><a href="#">黄埔</a><a href="#">义顺</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">日本</a>
+								</dt>
+								<dd>
+									<a href="#">东京</a><a href="#">大阪</a><a href="#">名古屋</a><a href="#">福冈</a><a
+									href="#">广岛</a><a href="#">北海道</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">韩国</a>
+								</dt>
+								<dd>
+									<a href="#">首尔</a><a href="#">釜山</a><a href="#">大邱</a><a href="#">京畿道</a>
+									<a href="#">仁川</a><a href="#">济州岛</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">阿联酋</a>
+								</dt>
+								<dd>
+									<a href="#">迪拜</a><a href="#">阿布扎比</a>
+								</dd>
+							</dl>
+							<dl class="fore7">
+								<dt>
+									<a href="#">尼泊尔</a>
+								</dt>
+								<dd>
+									<a href="#">加德满都</a><a href="#">巴德岗</a><a href="#">博克拉</a><a href="#">帕坦</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">台湾</a>
+								</dt>
+								<dd>
+									<a href="#">台北</a><a href="#">基隆</a><a href="#">新竹</a><a href="#">高雄</a><a href="#">台南</a><a href="#">桃园</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">越南</a>
+								</dt>
+								<dd>
+									<a href="#">河内</a><a href="#">胡志明市</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">印度尼西亚</a>
+								</dt>
+								<dd>
+									<a href="#">雅加达</a><a href="#">万隆</a><a href="#">卡尔塔</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">以色列</a>
+								</dt>
+								<dd>
+									<a href="#">特拉维夫</a><a href="#">海法</a><a href="#">耶路撒冷</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">马尔代夫</a>
+								</dt>
+								<dd>
+									<a href="#">马累</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/1XDZ6ShE5M7tTrl.html"> <img src="images/1_1.jpg"
+									width="194" height="150" title="\家电"> </a>
+								</dd>
+								<dd>
+									<a href="http://sale.jd.com/act/v8kJIaPmsMGuebpH.html"> <img src="images/1_2.jpg"
+									width="194" height="150" title="小家电--三请聚宝盆"> </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					欧 &nbsp;&nbsp;&nbsp;&nbsp;洲<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">德国</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">北京</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">土耳其</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">英国</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a
+									href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">比利时</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">意大利</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl class="fore7">
+								<dt>
+									<a href="#">荷兰</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">台湾</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#"> 北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">越南</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a>
+								</dd>
+							</dl>
+						</div>
+
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/1XDZ6ShE5M7tTrl.html"> <img src="images/1_1.jpg"
+									width="194" height="230" > </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					美 &nbsp;&nbsp;&nbsp;&nbsp;洲<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">美国</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">加拿大</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">墨西哥</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+						</div>
+
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/1XDZ6ShE5M7tTrl.html"> <img src="images/1_1.jpg"
+									width="194" height="80" > </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					大&nbsp;洋&nbsp;洲<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">澳大利亚</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">新西兰</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+									<a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">帕劳</a>
+								</dt>
+								<dd>
+									<a href="#">北京</a><a href="#">北京</a><a href="#">北京</a><a href="#">北京</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/1XDZ6ShE5M7tTrl.html"> <img src="images/1_1.jpg"
+									width="194" height="80" > </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+				<div class="toptitle">
+					节目播出时间
+				</div>
+				<li>
+					2016<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">上半年</a>
+								</dt>
+								<dd>
+									<a href="#">一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">三月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">四月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">五月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">六月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">下半年</a>
+								</dt>
+								<dd>
+									<a href="#">七月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">八月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">九月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">十一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/v8kJIaPmsMGuebpH.html"> <img src="images/1_2.jpg"
+									width="194" height="150" title="小家电--三请聚宝盆"> </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					2015<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">上半年</a>
+								</dt>
+								<dd>
+									<a href="#">一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">三月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">四月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">五月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">六月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">下半年</a>
+								</dt>
+								<dd>
+									<a href="#">七月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">八月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">九月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">十一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/1XDZ6ShE5M7tTrl.html"> <img src="images/1_1.jpg"
+									width="194" height="150" title="\家电"> </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					2014<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">上半年</a>
+								</dt>
+								<dd>
+									<a href="#">一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">三月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">四月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">五月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">六月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">下半年</a>
+								</dt>
+								<dd>
+									<a href="#">七月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">八月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">九月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">十一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/v8kJIaPmsMGuebpH.html"> <img src="images/1_2.jpg"
+									width="194" height="150" title="小家电--三请聚宝盆"> </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					2013<span></span>
+					<div class="submenu">
+						<div class="leftdiv">
+							<dl>
+								<dt>
+									<a href="#">上半年</a>
+								</dt>
+								<dd>
+									<a href="#">一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">三月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">四月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">五月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">六月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<a href="#">下半年</a>
+								</dt>
+								<dd>
+									<a href="#">七月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">八月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">九月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+
+								</dt>
+								<dd>
+									<a href="#">十一月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a><a href="#">十二月</a><a href="#">1期</a><a href="#">2期</a>
+									<a href="#">3期</a><a href="#">4期</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="rightdiv">
+							<dl>
+								<dd>
+									<a href="http://sale.jd.com/act/1XDZ6ShE5M7tTrl.html"> <img src="images/1_1.jpg"
+									width="194" height="150" title="\家电"> </a>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</li>
+			</div>
+			<div class="rightmain">
+				<div id="container1">
+					<div id="list" style="left: -916px;">
+						<img src="images/main_7.jpg" alt="1"/>
+						<img src="images/main_1.jpg" alt="1"/>
+						<img src="images/main_2.jpg" alt="2"/>
+						<img src="images/main_3.jpg" alt="3"/>
+						<img src="images/main_4.jpg" alt="4"/>
+						<img src="images/main_5.jpg" alt="5"/>
+						<img src="images/main_6.jpg" alt="6"/>
+						<img src="images/main_7.jpg" alt="7"/>
+						<img src="images/main_1.jpg" alt="7"/>
+					</div>
+					<div id="buttons">
+						<span index="1" class="on"></span>
+						<span index="2"></span>
+						<span index="3"></span>
+						<span index="4"></span>
+						<span index="5"></span>
+						<span index="6"></span>
+						<span index="7"></span>
+
+					</div>
+					<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+					<a href="javascript:;" id="next" class="arrow">&gt;</a>
+				</div>
+				<div class="picList" id="picList">
+					<div class="pictit">
+						<span>本周推荐美食</span>
+					</div>
+					<div class='col' id="pic1" >
+						<img src="images/food_01.jpg" />
+						<a href="http://www.hirschen-imst.com/" target="_blank">德国脆香碳烤猪肘
+						<br/>
+						Hotel Gasthof Zum Hirschen餐厅
+						<br />
+						电话：+43 512 574356
+						<br />
+						地址：Thomas-Wakch-Strasse3，Austria
+						<br />
+						网址：http://www.hirschen-imst.com/ </a>
+					</div>
+					<div class='col' id="pic2">
+						<img src="images/food_02.jpg" />
+						<a href="http://www.starkenberger.at/" target="_blank">奥地利烤肉拼盘
+						<br/>
+						Starkenberger啤酒谷
+						<br />
+						电话：+43 512 578556
+						<br />
+						地址：griesegg1，6464 Tarrenz，Austria
+						<br />
+						网址：http://www.starkenberger.at/ </a>
+					</div>
+					<div class='col' id="pic3">
+						<img src="images/food_06.jpg" />
+						<a href="http://www.strudel-cafe.at/" target="_blank">马赛德拉芝士派
+						<br/>
+						Strudel-Cafe Kroll咖啡店
+						<br />
+						电话：+43 512 576256
+						<br />
+						地址：Hofgsse 6，Innsbruck，Austria
+						<br />
+						网址：http://www.strudel-cafe.at/ </a>
+					</div>
+				</div>
+				<div class="friend">
+					<div class="pictit">
+						<span>友情链接</span>
+					</div>
+					<div class="im">
+						<a href="http://www.aircanada.com/cn/zh/" target="_blank"> <img src="images/Tu_1.jpg"/> </a>
+						<a href="http://www.ana.co.jp/asw/wws/cn/c/?cid=sogou/2015/brand/001" target="_blank"><img src="images/Tu_2.jpg" /> </a>
+						<a href="http://www.singaporeair.com/zh_CN/cn/home" target="_blank"><img src="images/Tu_3.jpg"  /> </a>
+						<a href="http://www.airnewzealand.cn/new-zealand-romance-journey" target="_blank"><img src="images/Tu_4.jpg" target="_blank"/> </a>
+					</div>
+					<ul>
+						<span ></span>加拿大航空公司<span ></span>全日空航空公司<span></span>新加坡航空公司<span></span>新西兰航空公司
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div id="footer_right">
+				<a class="weixin" href="./index_weixin.html" target="_blank">Xfun吃货俱乐部官方微信： xfunchina </a>&nbsp;&nbsp; <a class="weibo" href="http://weibo.com/xfunchina?nick=XFun吃货俱乐部&is_hot=1" target="_blank">Xfun吃货俱乐部官方微博：xfunchina </a>
+			</div>
+		</div>
+	</body>
+
 </html>
