@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 0
+}
+body {
+	background-color: #CCFFFF;
+
+}
+.top {
+	height: 200px;
+	border: 2px solid #CCFFFF;
+	overflow: hidden;
+	background-color: #CCFFFF;
+	width: 1155px;
+	float: left;
+	
+	
+}
+.inf {
+	width: 150px;
+	overflow: hidden;
+	float: left;
+	font-size: 20px;
+	background-color: #CCFFFF;
+	height: 200px;
+	position: fixed;
+}
+.inf li {
+	line-height: 40px;
+	text-decoration: none;
+	text-align: center;
+	list-style: none;
+}
+.inf li a {
+
+	text-decoration: none;
+	color: black;
+}
+.inf li a:hover{
+	color:white;
+}
+.carousel {
+	width:1000px;
+	height: 200px;
+	background-color: #000;
+	float: right;
+}
+.carousel .item {
+	width:1000px;
+	height: 200px;
+	background-color: #000;
+}
+.carousel img{
+	width: 100%;
+}
+#p{
+	width: 160px;
+	float: right;
+	margin-top: 0px;
+	margin-left:1156px;
+	position: fixed;
+}
+#p a{
+	display:block;
+	padding-left:10px; 
+}
+.main1{
+	margin-top:210px;
+	width: 1000px;
+	margin-left: 150px;
+	position:absolute;
+	height: auto;
+}
+.box{
+	padding: 15px 0 0 15px;
+	float: left;
+	position: relative;
+	height: 420px;
+	width: 330px;
+}
+
+.box .pic{
+	padding: 0px 10px 10px 10px;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #ccc;
+	overflow: hidden;
+	height: 400px;
+	position: relative;
+}
+
+.box .pic img ,.pic a{
+	position: absolute;
+}
+.pic a{
+	display: block;
+	width: 300px;
+	height: 60px;
+	top: 400px;
+	background:#CCFFFF;
+	opacity: 0.8;
+	text-decoration: none;
+	overflow: hidden;
+}
+.pic a img{
+	padding:20px 0 0 250px; 
+}
+
