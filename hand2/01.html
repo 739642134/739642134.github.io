@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+ <!--
+  <link rel="stylesheet" href="../css/bgfr_global.css"></link>
+  <link rel="stylesheet" href="../css/liaoyangstyle.css"></link>  
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.1.11.1.js"></script>
+     
+  -->
+  <link href="css/style.css" rel="stylesheet">
+ 
+  <script src="leap-0.6.4.js"></script>
+  <script src="leap-plugins-0.1.6.js"></script>
+ <!-- <script src="three.js"></script>   -->
+  <script src="build/three.js"></script> 
+  
+  <script type="text/javascript">
+  
+   function gotopage(){
+		window.location.href='02.html';
+	}
+	
+  var controller = Leap.loop({enableGestures: true}, function(frame){
+  if(frame.valid && frame.gestures.length > 0){
+	  frame.hands.forEach(function(hand){
+        if(hand.type == "left" && frame.hands.length == 1){
+              frame.gestures.forEach(function(gesture){
+        switch (gesture.type){
+          case "circle":
+      //        console.log("Circle Gesture1");
+			//  gotopage();
+              break;
+          case "keyTap":
+   //           console.log("Key Tap Gesture1");
+			  
+		//	  setTimeout(gotopage,1000);
+              break;
+          case "screenTap":
+     //         console.log("Screen Tap Gesture1");
+			//  gotopage();
+              break;
+          case "swipe":
+      //        console.log("Swipe Gesture1");
+			  gotopage();
+              break;
+        }
+    });
+        }
+		})
+  
+  }
+});
+//---------------------------------------------------------------------------------------
+    /*       Leap.loop(function(frame) { 
+       if (frame.pointables.length > 0) 
+          console.log('我的'+frame.pointables); 
+     });    */
+  </script>
+   <style type="text/css"> 
+        body,div{
+			margin:0;padding:0; font-family:"微软雅黑";
+		background-image:url(images/01.PNG)    
+			}
+     </style> 
+</head>
+<body>
+<main data-ratio="2:1">
+      <video id="video-background" autoplay loop muted="" poster="images/01.PNG" >
+        <source src="video/1.mp4" type="video/mp4">
+      </video>
+             <div id="game"></div> 
+    </main>
+ </body>
+  <script src="main.js" type="text/javascript"> </script>
+</html>
