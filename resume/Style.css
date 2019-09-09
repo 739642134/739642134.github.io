@@ -54,7 +54,8 @@
 	
 }
 #inf{
-	height: 530px;width:800px;
+	height: 530px;
+	width:80%;
 	float: left;
 	display:block;
 	margin-left: 100px;
@@ -111,16 +112,17 @@
     background-size:100% 100%;
 }
 #inf2{
-	height: 580px;width:1200px;
+	height: 700px;width:1200px;
 	float: left;
 	display:block;
 	margin-left: 250px;
+	margin-top: -70px;
 	overflow: hidden;	
 }
 #inf2 ul{
 	color:black;
 	height:auto;
-	margin: 20px;
+	margin: 10px;
 	font-size: 25px;
 	font-weight: 900;
 	overflow: hidden;
@@ -146,7 +148,10 @@
 	background:url(img/b_01.jpg)no-repeat center ;
     background-size:100% 100%;
 }
-#self div{margin-top:115px;margin-left:200 ;width: 750px;}
+#self div{margin-top:65px;margin-left:200 ;width: 750px;}
 #self img{
 	margin-top: 210px;
+}
+.ii{
+	margin-top: -200px;
 }
